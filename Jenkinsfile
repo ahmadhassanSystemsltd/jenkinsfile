@@ -45,5 +45,13 @@ pipeline {
         }
       }
     }
+      stage('rollback') {
+      steps {
+        sh 'git checkout rollback-branch'
+        sh 'git revert HEAD'
+        sh 'git push origin rollback-branch'
+        // deploy rollback changes to production environment
+      }
+    }
   }
 }
