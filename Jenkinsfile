@@ -31,18 +31,7 @@ pipeline {
             sh 'dpctl'
           }
         }
-        stage('darwin-amd64') {
-          agent {label 'darwin-amd64'}
-          steps {
-            sh 'dpctl'
-          }
-        }
-        stage('linux-amd64') {
-          agent {label 'linux-amd64'}
-          steps {
-            sh 'dpctl'
-          }
-        }
+
       }
     }
       stage('rollback') {
